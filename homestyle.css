@@ -1,0 +1,143 @@
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color:rgba(30, 30, 30, 0.96);
+    color: #CCAC8C;
+    font-family: monospace;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
+/*NAVBAR DEF*/
+.topbar {
+    background-color: #2E2E2E;
+    width: 100%;
+}
+
+.spacing {
+    display: flex;
+    align-items: center;
+    margin-left: 15%;
+    margin-right: 10%;
+    justify-content: space-between;
+}
+
+.botbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #2E2E2E;
+    align-items: center;
+    position: fixed;
+    bottom: 0px;
+    left:0;
+    right: 0;
+    width: 100%;
+    height: 50px;
+}
+
+.navlinks {
+    display: flex;
+    justify-content: space-around;
+    width: 25%;
+    height: 100%;
+}
+
+.links {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+
+.links a{
+    color: #6C8C6C;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.textbar {
+    color: #AC6C8C;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+
+.navlinks li, .links li{
+    list-style: none;
+}
+
+.navlinks a {
+    color: #CC6C00;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.titlebar {
+    letter-spacing: 3px;
+}
+
+.titlebar pre{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.titlebar h1{
+    margin: 0px;
+}
+/*NAVBAR DEF END*/
+
+h1 {
+    color: #CC8C00;
+    font-size: 180%;
+}
+
+h2 {
+    color: #8C8C00;
+    font-size: 145%;
+    text-align: center;
+}
+
+a {
+    color: #AB4C4C;
+}
+
+.bigleux {
+    font-size: 130%;
+    margin-left: 30%;
+    padding-bottom: 50px;
+}
+
+.description {
+    font-size: 13px;
+    background-color: #222222;
+    width: 650px;
+    padding-bottom: 10px;
+    padding-top: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    border-radius: 10px;
+}
+
+.description a{
+    text-decoration: none;
+}
+
+.bigleux li{
+    font-size: 15px;
+    list-style-type: none;
+    color: #AC6C8C
+}
+
+.bigleux ul{
+    padding-left: 0px;
+}
