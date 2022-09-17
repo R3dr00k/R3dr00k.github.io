@@ -108,12 +108,6 @@ a {
     color: #AB4C4C;
 }
 
-.bigleux {
-    font-size: 130%;
-    margin-left: 30%;
-    padding-bottom: 50px;
-}
-
 .description {
     font-size: 13px;
     background-color: #222222;
@@ -132,12 +126,30 @@ a {
     text-decoration: none;
 }
 
-.bigleux li{
+.content {
+    font-size: 130%;
+    margin-left: 30%;
+    padding-bottom: 50px;
+}
+
+
+.content li{
     font-size: 15px;
     list-style-type: none;
     color: #AC6C8C
 }
 
-.bigleux ul{
+.content ul{
     padding-left: 0px;
+}
+
+.sommaire {
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.sommaire li{
+    font-size: 23px;
+    list-style-type: decimal;
+    margin-top: 5px;
 }
