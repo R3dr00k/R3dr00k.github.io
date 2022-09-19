@@ -2,6 +2,8 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="../../homestyle.css">
+        <link rel="stylesheet" href="../../srcery.min.css">
+    
         <title>tri par insertion</title>
     </head>
     <body>
@@ -18,6 +20,19 @@
             </div>
         </div>
 
+        <div class="content">
+        <pre><code class="python">import time
+import random
+
+def tri_insertion(tab):
+    for i in range(1,len(tab)):
+        for j in range(0, i):
+            if tab[i] <= tab[j]:
+                tab.insert(j, tab.pop(i))
+                break
+    return tab</code></pre>
+        </div>
+
         <div class="botbar">
             <div class="textbar">
                 <p>My links</p>
@@ -27,5 +42,8 @@
                 <li><a href="https://www.root-me.org/R3drook">Root me</a></li>
             </ul>
         </div>
+
+        <script src="../../highlight.min.js"></script><!-- JS de highlight.js-->
+        <script>hljs.initHighlightingOnLoad();</script><!-- activer la coloration du code -->
     </body>
 </html>
