@@ -21,16 +21,54 @@
         </div>
 
         <div class="content">
-        <pre><code class="python">import time
-import random
+            <h2 id="Fonct">Fonctionnement</h2>
+            <p>Le Tri par insertion parcourt chaque élément du tableau puis  les inserent à la bonne place parmi les élément déja triés .<br>
+            Pour trouver la bonne place parmi les éléments déja triés il faut le comparer à chaque éléments de la partie triée .
+            <strong>SI</strong> l'élément est plus grand que tous les éléments trié alors il suffit de continuer à parcourir le tableau car cet élément est déja trié .
+            <strong>SINON</strong> il faut decaler les élements trié pour laisser un espace vide où inserer l'élément .</p>
+            <h2 id="Ex">Exemple</h2>
 
+            <p>Prenons par exemple un tableau : [6, 8, 5, 3, 9]:<br>
+            1ère itération i=1:<br>
+            [<span style="color:green">6</span>, <span style="color:red">8</span>, 5, 3, 9] =&gt [<span style="color:green">6</span>, <span style="color:red">8</span>, 5, 3, 9] <br>
+            i=2:<br>
+            [<span style="color:green">6, 8</span>, <span style="color:red">5</span>, 3, 9] =&gt [<span style="color:red">5</span>, <span style="color:green">6, 8</span>, 3, 9] <br>
+            i=3:<br>
+            [<span style="color:green">5, 6, 8</span>, <span style="color:red">3</span>, 9] =&gt [<span style="color:red">3</span>, <span style="color:green">5, 6, 8</span>, 9] <br>
+            i=4 and last:<br>
+            [<span style="color:green">3, 5, 6, 8</span>, <span style="color:red">9</span>] =&gt [<span style="color:green">3, 5, 6, 8, 9</span>] <br>
+            </p>
+
+            <h2 id="PsCode">Pseudo Code</h2>
+            <pre><code>
+tri_insertion(tableau T)
+     pour i de 1 à taille(T) - 1
+
+        # mémoriser T[i] dans x
+        x ← T[i]                            
+
+        # décaler les éléments T[0]..T[i-1] qui sont plus grands que x, en partant de T[i-1]
+        j ← i                               
+        tant que j &gt 0 et T[j - 1] &gt x
+                 T[j] ← T[j - 1]
+                 j ← j - 1
+
+        # placer x dans le "trou" laissé par le décalage
+        T[j] ← x
+
+From Wikipedia            </code></pre>
+            <h2 id="ImpEnPython">Implémentation en Python</h2>
+            <p>En python on peut utiliser les méthodes de list <strong>insert(index, value)</strong> et <strong>pop(index)</strong> qui nous évite d'avoir à décaler les valeurs triées.</p>
+            <pre><code>
 def tri_insertion(tab):
     for i in range(1,len(tab)):
         for j in range(0, i):
             if tab[i] <= tab[j]:
                 tab.insert(j, tab.pop(i))
                 break
-    return tab</code></pre>
+    return tab  </code></pre>
+
+            <p>Cet Algorithme parcours chaque élément du tableau, puis cherche dans la partie triée le bon emplacement pour ces derniers.</p>
         </div>
 
         <div class="botbar">

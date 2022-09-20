@@ -101,7 +101,7 @@ h1 {
 h2 {
     color: #8C8C00;
     font-size: 145%;
-    text-align: center;
+    margin-left: 100px;
 }
 
 a {
@@ -149,7 +149,15 @@ a {
 }
 
 .sommaire li{
-    font-size: 23px;
+    font-size: 18px;
     list-style-type: decimal;
     margin-top: 5px;
+}
+
+p {
+    margin-right: 10%;
+} 
+
+.little {
+    font-size: 10px
 }
