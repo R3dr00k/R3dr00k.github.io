@@ -3,7 +3,7 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="../../homestyle.css">
         <link rel="stylesheet" href="../../srcery.min.css">
-        <title>tri par insertion</title>
+        <title>tri par selection</title>
     </head>
     <body>
         <div class="topbar">
@@ -21,7 +21,21 @@
 
         <div class="content">
             <h2 id="Fonct">Fonctionnement</h2>
+            <p>Le principe de cet algorithme est de rechercher le plus petit élément puis de l'échanger avec l'élément d'indice 0.<br>
+            ensuite on recherche le plus petit élément du 1er index jusqu'a la fin du tableau et on l'échange avec l'elem d'indice 1 etc..</p>
             <h2 id="Ex">Exemple</h2>
+                <p>Prenons par exemple un tableau : [6, 8, 5, 3, 9]:<br>
+                1ère itération i=1:<br>
+                [6, 8, 5, <span style="color:red">3</span>, 9] =&gt [<span style="color:red">3</span>, 8, 5, 6, 9] <br>
+                i=2:<br>
+                [<span style="color:green">3</span>, 8, <span style="color:red">5</span>, 6, 9] =&gt [<span style="color:green">3</span>, <span style="color:red">5</span>, 8, 6, 9] <br>
+                i=3:<br>
+                [<span style="color:green">3, 5</span>, 8, <span style="color:red">6</span>, 9] =&gt [<span style="color:green">3, 5, </span> <span style="color:red">6</span>, 8, 9] <br>
+                i=4 :<br>
+                [<span style="color:green">3, 5, 6</span>, <span style="color:red">8</span>, 9] =&gt [<span style="color:green">3, 5, 6</span>, <span style="color:red">8</span>, 9] <br>
+                i=5 :<br>
+                [<span style="color:green">3, 5, 6, 8</span>, <span style="color:red">9</span>] =&gt [<span style="color:green">3, 5, 6, 8</span>, <span style="color:red">9</span>] <br>
+                </p>
             <h2 id="PsCode">Pseudo Code</h2>
             <pre><code>  
 tri_selection(tableau t)
@@ -38,6 +52,19 @@ tri_selection(tableau t)
   fin procédure
             </code></pre>
             <h2 id="ImpEnPython">Implémentation en Python</h2>
+            <p>Python nous permet d'échanger la valeur de deux variable sans passer explicitement par une troisième variable grace a la syntax : var1, var2 = var2, var1</p>
+                <pre><code>
+def tri_selection(tab):
+    for i in range(len(tab)):
+        min = i
+        for j in range(i, len(tab)):
+            if tab[j] < tab[min]:
+                min = j
+
+        tab[i], tab[min] = tab[min], tab[i]
+
+    return tab </code></pre>
+            <p>Ce petit code parcours chaque index du tableau, puis pour chaque élément il recherche le minimum à partir de ce dernier, puis finalement échange le minimum trouvé avec l'élément .</p>
         </div>
 
         <div class="botbar">

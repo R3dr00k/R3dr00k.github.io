@@ -3,7 +3,7 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="../../homestyle.css">
         <link rel="stylesheet" href="../../srcery.min.css">
-        <title>tri par insertion</title>
+        <title>tri a bulle</title>
     </head>
     <body>
         <div class="topbar">
@@ -20,10 +20,40 @@
         </div>
 
         <div class="content">
-        <h2 id="Fonct">Fonctionnement</h2>
+            <h2 id="Fonct">Fonctionnement</h2>
+                <p>Le tri a bulle compare chaque élément au suivant puis les permutent lorsqu'ils sont mal triés, il répéte cette opération jusqu'a ce que le tableau soit totalement trié.</p> 
             <h2 id="Ex">Exemple</h2>
+                <p>Prenons un tableau : [5, 1, 4, 2, 8]</p>
+                <p><pre>
+i=0 ( <strong>5 1</strong> 4 2 8 ) → ( <strong>1 5</strong> 4 2 8 ). Les nombres 5 et 1 sont comparés, et comme 5 > 1, l'algorithme les permute.
+i=1 ( 1 <strong>5 4</strong> 2 8 ) → ( 1 <strong>4 5</strong> 2 8 ). Permutation, car 5 > 4.
+i=2 ( 1 4 <strong>5 2</strong> 8 ) → ( 1 4 <strong>2 5</strong> 8 ). Permutation, car 5 > 2.
+i=3 ( 1 4 2 <strong>5 8</strong> ) → ( 1 4 2 <strong>5 8</strong> ). Pas de permutation, car 5 < 8.
+On récommence jusqu a ce que le tableau soit trié
+                </pre></p>
             <h2 id="PsCode">Pseudo Code</h2>
+                <pre><code>
+tri_à_bulles_optimisé(Tableau T)
+    pour i allant de (taille de T)-1 à 1
+        tableau_trié := vrai
+        pour j allant de 0 à i-1
+            si T[j+1] < T[j]
+                (T[j+1], T[j]) = (T[j], T[j+1])
+                tableau_trié := faux
+        si tableau_trié
+            fin tri_à_bulles_optimisé
+                </code></pre>
             <h2 id="ImpEnPython">Implémentation en Python</h2>
+                <pre><code>
+def tri_bulles(tab):
+    sorted = False
+    while not sorted:
+        sorted = True
+        for i in range(len(tab)-1):
+            if tab[i] > tab[i+1]:
+                tab[i], tab[i+1] = tab[i+1], tab[i]
+                sorted = False
+    return tab </code></pre>
         </div>
 
         <div class="botbar">
