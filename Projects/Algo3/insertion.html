@@ -22,10 +22,10 @@
 
         <div class="content">
             <h2 id="Fonct">Fonctionnement</h2>
-            <p>Le Tri par insertion parcourt chaque élément du tableau puis  les inserent à la bonne place parmi les élément déja triés .<br>
+            <p>Le Tri par insertion parcourt chaque élément du tableau puis  les insèrent à la bonne place parmi les éléments déjà triés .<br>
             Pour trouver la bonne place parmi les éléments déja triés il faut le comparer à chaque éléments de la partie triée .
-            <strong>SI</strong> l'élément est plus grand que tous les éléments trié alors il suffit de continuer à parcourir le tableau car cet élément est déja trié .
-            <strong>SINON</strong> il faut decaler les élements trié pour laisser un espace vide où inserer l'élément .</p>
+            <strong>SI</strong> l'élément est plus grand que tous les éléments triés alors il suffit de continuer à parcourir le tableau car cet élément est déjà trié .
+            <strong>SINON</strong> il faut décaler les élements trié pour laisser un espace vide où insérer l'élément .</p>
             <h2 id="Ex">Exemple</h2>
 
             <p>Prenons par exemple un tableau : [6, 8, 5, 3, 9]:<br>
@@ -58,7 +58,7 @@ tri_insertion(tableau T)
 
 From Wikipedia            </code></pre>
             <h2 id="ImpEnPython">Implémentation en Python</h2>
-            <p>En python on peut utiliser les méthodes de list <strong>insert(index, value)</strong> et <strong>pop(index)</strong> qui nous évite d'avoir à décaler les valeurs triées.</p>
+            <p>En python on peut utiliser les méthodes de liste <strong>insert(index, value)</strong> et <strong>pop(index)</strong> qui nous évitent d'avoir à décaler les valeurs triées.</p>
             <pre><code>
 def tri_insertion(tab):
     for i in range(1,len(tab)):
@@ -68,7 +68,7 @@ def tri_insertion(tab):
                 break
     return tab  </code></pre>
 
-            <p>Cet Algorithme parcours chaque élément du tableau, puis cherche dans la partie triée le bon emplacement pour ces derniers.</p>
+            <p>Cet Algorithme parcourt chaque élément du tableau, puis cherche dans la partie triée le bon emplacement pour ces derniers.</p>
         </div>
 
         <div class="botbar">

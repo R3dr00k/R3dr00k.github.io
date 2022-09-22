@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../../homestyle.css">
+        <link rel="stylesheet" href="../../srcery.min.css">
+    
+        <title>tri fusion</title>
+    </head>
+    <body>
+        <div class="topbar">
+            <div class="spacing">
+                <div class="titlebar">
+                    <h1><pre>+------------+<br>| TRI FUSION |<br>+------------+</pre></h1>
+                </div>
+
+                <ul class="navlinks">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="./Algo_de_tri.html">Sommaire</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2 id="Fonct">Fonctionnement</h2>
+            Le tri par fusion divise le tableau en deux et redivise les deux moitiés j'usqu'à que la taille des tableaux soit égale à 2 ou à 1 si le tableau initial est impair.<br>
+            Il tri ensuite chaque tableau c'est une tache facile car les tableaux sont au maximum de taille 2.<br>
+            Finallement comme son nom l'indique il fusionne les tableaux deux à deux , puisque les tableaux sont déjà triés il suffit de comparer les premiers éléments et à chaque fois de prendre le plus petit pour l'ajouter au nouveau tableaux
+            
+            <h2 id="Ex">Exemple</h2>
+            <p>Cette image résume bien le fonctionnement de cet algorithme :</p>
+            <img src="../../img/fusion.png" alt="tri fusion"> 
+            <h2 id="PsCode">Pseudo Code</h2>
+            <p>Face à ce type de problême la récursivité est une solution éfficace.</p>
+                <pre><code>
+fonction triFusion(T[1, …, n])
+      si n ≤ 1
+              renvoyer T
+      sinon
+              # on rappel la fonction triFusion sur les deux moités du tableau.
+              # c'est la partie ou l'on divise les tableau en deux.
+              renvoyer fusion(triFusion(T[1, …, n/2]), triFusion(T[n/2 + 1, …, n]))
+                </code></pre>
+                <p>La fonction qui fusionne les tableaux deux à deux:</p>
+                <pre><code>
+fonction fusion(A[1, …, a], B[1, …, b])
+      si A est le tableau vide
+              renvoyer B
+      si B est le tableau vide
+              renvoyer A
+      si A[1] ≤ B[1]
+              renvoyer A[1] ⊕ fusion(A[2, …, a], B)
+      sinon
+              renvoyer B[1] ⊕ fusion(A, B[2, …, b])
+                </code></pre>
+            <h2 id="ImpEnPython">Implémentation en Python</h2>
+            <pre><code>
+def fusion(tab1, tab2):
+    if len(tab1) == 0:
+        return tab2
+    if len(tab2) == 0:
+        return tab1
+
+    if tab1[0] < tab2[0]:
+        return [tab1[0]] + fusion(tab1[1:], tab2)
+    else:
+        return [tab2[0]] + fusion(tab1, tab2[1:])
+
+
+def tri_fusion(tab):
+    size = len(tab)
+    # cas arret = si len 1 ou 2
+    if len(tab) == 2:
+        if tab[1] < tab[0]:
+            return [tab[1], tab[0]]
+        else:
+            return tab
+    if len(tab) == 1:
+        return tab
+
+    return fusion(tri_fusion(tab[:size//2]), tri_fusion(tab[size//2:]))
+
+            </pre></code>
+        </div>
+
+        <div class="botbar">
+            <div class="textbar">
+                <p>My links</p>
+            </div>
+            <ul class="links">
+                <li><a href="https://github.com/R3dr00k">Github</a></li>
+                <li><a href="https://www.root-me.org/R3drook">Root me</a></li>
+            </ul>
+        </div>
+
+        <script src="../../highlight.min.js"></script><!-- JS de highlight.js-->
+        <script>hljs.initHighlightingOnLoad();</script><!-- activer la coloration du code -->
+    </body>
+</html>
